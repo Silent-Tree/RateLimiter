@@ -14,10 +14,11 @@ public class RateLimiterController {
     @GetMapping("sale")
     @RateLimiter
     public String sale(boolean flag){
-        System.out.println("我执行了"+flag);
         if(flag){
+            System.out.println("success");
             return "success";
         }else {
+            System.out.println("throttle");
             return "throttle";
         }
     }
